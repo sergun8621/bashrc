@@ -100,6 +100,9 @@ fi
 
 ####CUSTOM######
 
+HISTCONTROL=ignoredups
+HISTTIMEFORMAT="%F %T "
+
 #My_LOCAL_IP
 loc=`/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1`
 #My_REAL_IP
@@ -113,10 +116,15 @@ alias real='wget -qO- eth0.me'
 alias ipt='/usr/sbin/iptables'
 alias ports='netstat -tulanp'
 alias meminfo='free -m -l -t'
+alias tree='tree --dirsfirst -F'
 
 function MYIP () {
 echo "My local ip address:";
 /sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1;
 echo "My real ip address:";
 wget -qO- eth0.me;
+}
+
+function find_largest_files() {
+    du -h -x -s -- * | sort -r -h | head -20;
 }
