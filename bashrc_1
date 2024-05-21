@@ -111,12 +111,19 @@ real=`wget -qO- eth0.me`
 tplink="integranetwork.tplinkdns.com"
 
 alias cl='clear'
-alias ya='ping ya.ru'
-alias real='wget -qO- eth0.me'
-alias ipt='/usr/sbin/iptables'
-alias ports='netstat -tulanp'
+alias update='sudo apt update && sudo apt upgrade'
+alias hi='history'
 alias meminfo='free -m -l -t'
 alias tree='tree --dirsfirst -F'
+alias rmd='rm -Rfv'
+alias pwgen='pwgen -Bsync 15 -1'
+alias nano='nano -l'
+
+alias ya='ping ya.ru'
+alias real='wget -qO- eth0.me'
+alias ipt='sudo /usr/sbin/iptables'
+alias iptlist='sudo /usr/sbin/iptables -L -n -v --line-numbers'
+alias ports='netstat -tulanp'
 
 function MYIP () {
 echo "My local ip address:";
